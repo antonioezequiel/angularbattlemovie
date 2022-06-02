@@ -1,0 +1,29 @@
+footer {
+    border-top: 1px solid #d66e19;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+  footer::after {
+    opacity: 0.2;
+    width: 100%;
+    height: 200px;
+    background: url(/assets/cinema.jpg);
+    background-repeat: repeat;
+    content: "";
+    z-index: 2;
+    position: absolute;
+  }
+  
+  footer h3 {
+    margin-bottom: 1.2em;
+  }
+  
+  footer span {
+    font-weight: bold;
+    color: #d66e19;
+  }
+  
+  

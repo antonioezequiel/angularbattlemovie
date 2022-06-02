@@ -1,0 +1,53 @@
+<div class="new-container">
+    <h1>Olá Novo Jogador, vamos nos cadastrar e jogar grandes partidas?</h1>
+    <form (ngSubmit)="cadastrar()" [formGroup]="cadastroForm" #formDir="ngForm">
+        <div class="form-group">
+            <label for="login">Login:</label>
+            <input
+            type="text"
+            formControlName="login"
+            placeholder="Coloque um login"
+            required
+            />        
+            <div *ngIf="login!.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="login!.errors?.['required']">O login é obrigatório.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input
+            type="password"
+            formControlName="senha"
+            placeholder="Coloque uma senha"
+            required
+            />
+            <div
+            *ngIf="senha!.invalid && formDir.submitted"
+            class="validation-error"
+            >
+            <p *ngIf="senha!.errors?.['required']">A senha é obrigatória.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="confirmSenha">Repetir Senha:</label>
+            <input
+            type="password"
+            formControlName="confirmSenha"
+            placeholder="repita a senha"
+            required
+            />
+            <div
+            *ngIf="confirmSenha!.invalid && formDir.submitted"
+            class="validation-error"
+            >
+            <p *ngIf="confirmSenha!.errors?.['required']">A Confirmação de senha é obrigatória.</p>
+            </div>
+            <div *ngIf="cadastroForm.errors?.['senhasDiferentesError'] && formDir.submitted" class="validation-error"
+            >            
+                <p>As duas senhas não são iguais</p>
+            </div>
+        </div>
+        <input type="submit" value="Cadastrar" />
+    </form>
+</div>
+

@@ -1,0 +1,12 @@
+.pageNotFound{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    height: 350px;
+    background: url(/assets/notFound.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,6 @@
+<div class="text-center" *ngIf="hasMore; else naoHaDadosCarregar">
+    <button class="load">carregar mais campeões...</button>
+</div>
+<ng-template #naoHaDadosCarregar>
+    <p class="text-alert">A lista de campeões chegou ao fim</p>
+</ng-template>

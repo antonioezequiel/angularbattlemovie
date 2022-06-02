@@ -1,0 +1,32 @@
+.load {
+    background-color: #efefef;
+    border: none;
+    padding: 0.6em 1em;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1em;
+    border: 2px solid transparent;
+    transition: 0.4s;
+    margin-bottom: 0.8em;
+    border-radius: 10px;
+  }
+  
+  .load:hover {
+    color: #dac76a;
+    border-color: #dac76a;
+    background-color: transparent;
+  }
+
+  .text-center{
+    width: 100%;
+    margin: 15px auto;
+
+  }
+
+  .text-alert{
+      color: #c2653a;
+      font-size: medium;
+      font-family: cursive;
+      margin-bottom: 40px;
+      margin-top: 20px;
+  }

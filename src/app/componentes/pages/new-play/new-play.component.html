@@ -1,0 +1,7 @@
+<div class="play-container1">
+    <div class="play-container">
+        <app-login *ngIf="!logado" (usuarioLogadoEmiter)="receberValorLogado($event)"></app-login>
+        <app-iniciar *ngIf="logado && !iniciado" [userName] = "user" (jogoIniciadoEmiter) = "jogoIniciado($event)"></app-iniciar>
+        <app-sortear *ngIf="logado && iniciado" [userName]="user" (jogoFinalizadoEmiter)="jogoFinalizado($event)"></app-sortear>
+    </div>
+</div>

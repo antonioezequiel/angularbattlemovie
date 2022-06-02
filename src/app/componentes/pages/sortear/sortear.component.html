@@ -1,0 +1,26 @@
+<h1>Olá {{userName | uppercase}}, vamos Jogar?</h1>
+<div *ngIf="(user | json) != '{}'" class="ultimaJogada">
+    <h3>Dados após a última Jogada!</h3>
+    <p class="message">{{user.message}}</p>
+    <p><span>Lifes:</span> {{user.life}}</p>
+    <p><span>Rounds: </span>{{user.round}}</p>
+    <p class="score"><span>Score: </span>{{user.score}} pontos</p>
+</div>
+<div *ngIf="movies.length == 0; else dadosMovies" class="sortear">
+    <button *ngIf="!finalizado" (click)="sortear()">Sortear Filmes</button>
+</div>
+<ng-template #dadosMovies>
+    <h2>Escolha o filme que você acha que teve mais votos no IMDB</h2>
+    <div *ngFor="let movie of movies" class="container-movies">
+        <div [ngClass]="{'postionOne':movie.position === 1, 'postionTwo':movie.position === 2}" >
+            <h3>Dados do  {{movie.position}}ª Filme</h3>
+            <p>Código IMDB: {{movie.imdbID}}</p>
+            <p>Titulo: {{movie.title}}</p>
+            <p>Ano: {{movie.year}}</p>
+            <button (click)="jogar(movie)">Esse é a sua escolha?</button>
+        </div>
+    </div>
+</ng-template>
+<div class="finalizar" *ngIf="!finalizado">
+    <button (click)="finalizar()">Finalizar Partida</button>
+</div>

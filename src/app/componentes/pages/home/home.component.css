@@ -1,0 +1,92 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .home-container h2 {
+    margin-bottom: 0.8em;
+    margin-top: 0.5em;
+  }
+
+  .home-container h1 {
+    color: #dec129;
+    margin-bottom: 0.8em;
+    margin-top: 0.5em;
+  }
+  
+  .moments-container {
+    max-width: 650px;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  
+  input {
+    border-radius: 10px;
+    width: 220px;
+    height: 30px;
+    border-color: #dec129;
+    border-width: 2px;
+  }
+
+  input:focus{
+    border-color: #dec129;
+    border-width: 2px;
+    outline: none !important;
+  }
+
+
+  .search-container {
+    margin-bottom: 2em;
+  }
+  
+  .moment {
+    max-width: 650px;
+    margin-bottom: 1em;
+    text-align: center;
+    float: left;
+    min-height: 150px;
+    margin: auto;
+  }
+
+  .content{
+    min-width: 150px;
+    margin: 0px 30px;
+    padding: 5px;
+  }
+
+  .content:hover {
+    background-color: #e4e4e4;
+    border-radius: 10px;
+  }
+
+  img {
+      height:  30px;
+  }
+
+  .content p {
+    margin-bottom: 1em;
+    font-size: medium;
+    font-style: oblique;
+    font-weight: bolder;
+  }
+
+  .content .postionOne {
+      color: brown;
+  }
+
+  .normal {
+    margin-top: 33px;
+    float: left;
+  }
+    
+  a {
+    color: #dec129;
+    padding: 0.3em 0.6em;
+  }
+  
+  a:hover {
+    background-color: #efefef;
+  }
+  

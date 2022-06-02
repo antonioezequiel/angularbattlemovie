@@ -1,0 +1,34 @@
+<div class="home-container">
+    <h1>Nosso Ranking de campeões</h1>
+    <div class="search-container">
+        <form>
+            <fa-icon [icon]="faSearch"></fa-icon>
+          <input
+            type="text"
+            [value]="filter"
+            class="buscar"
+            autofocus
+            placeholder="Busque por um campeão..."
+            (input)="search($event)"
+          />
+        </form>
+      </div>
+    <div class="moments-container" *ngIf="listusers.length > 0; else noUsers">
+        <div *ngFor="let user of listusers" class="moment">
+          <div [ngClass]="user.position === 1 || user.position === 2 || user.position === 3 ? 'topPosition': 'normal' ">
+            <img *ngIf="user.position === 1" src="/assets/coroaOuro.jpg" alt="coroaOuro" >
+            <img *ngIf="user.position === 2" src="/assets/coroaPrata.jpg" alt="coroaPrata" >
+            <img *ngIf="user.position === 3" src="/assets/coroaBronze.jpg" alt="coroaBronze" >
+            <div class="content">                
+                <h2 [ngClass]="{'postionOne':user.position === 1}"> {{user.position}}ª Posição </h2>
+                <p [ngClass]="{'postionOne':user.position === 1}">Nome: {{user.userQuiz | uppercase}}</p>
+                <p [ngClass]="{'postionOne':user.position === 1}">Score: {{user.score}} pontos</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <app-load-button (click)="load()" [hasMore]="hasMore"></app-load-button>
+    <ng-template #noUsers>
+        <h1>Não há jogos Salvos!</h1>
+    </ng-template>
+</div>

@@ -2,5 +2,7 @@ export interface Movie {
     position?: number
     title: string
     year: number
-    imdbID: number
+    imdbId: number
+    foto: string
+    categoria: string
 }

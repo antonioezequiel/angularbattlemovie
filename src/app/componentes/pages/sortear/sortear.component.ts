@@ -37,15 +37,16 @@ export class SortearComponent implements OnInit {
   }
 
   jogar(movie: Movie) {
-
-    this.jogada.imdbID = movie.imdbID;
-    this.jogada.loginUser = this.userName;
+    this.jogada.imdbID = movie.imdbId;
 
     this.movieService.jogar(this.jogada).subscribe(user => {
       this.user = user;
       this.movies = [];
       console.log(this.user);
-      if(user.finalizado) {
+
+      //verifica se o usuario ainda tem jogadas
+      if(user.life == 0) {
+        this.finalizado = true;
         this.encerrar(user);
       }        
     });
@@ -60,7 +61,6 @@ export class SortearComponent implements OnInit {
   }
 
   private encerrar(user: User){
-    this.finalizado  = true;
     user.message += '.\n Você será enviado para página de login.'
     this.user = user;
     setTimeout(() => {

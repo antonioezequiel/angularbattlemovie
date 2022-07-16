@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
 
   atualizarExibicao() {
     this.listusers = this.listUsersFilter.filter(user => 
-      user.userQuiz?.toLowerCase().includes(this.filter.toLowerCase()));
+      user.usuario?.toLowerCase().includes(this.filter.toLowerCase()));
   }
   
   limparFilterConsulta(){

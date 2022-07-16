@@ -7,16 +7,17 @@
     <p class="score"><span>Score: </span>{{user.score}} pontos</p>
 </div>
 <div *ngIf="movies.length == 0; else dadosMovies" class="sortear">
-    <button *ngIf="!finalizado" (click)="sortear()">Sortear Filmes</button>
+    <button *ngIf="!finalizado" (click)="sortear()">Sortear Mídias</button>
 </div>
 <ng-template #dadosMovies>
-    <h2>Escolha o filme que você acha que teve mais votos no IMDB</h2>
+    <h2>Escolha a Mídia que você acha que teve mais votos no IMDB</h2>
     <div *ngFor="let movie of movies" class="container-movies">
         <div [ngClass]="{'postionOne':movie.position === 1, 'postionTwo':movie.position === 2}" >
-            <h3>Dados do  {{movie.position}}ª Filme</h3>
-            <p>Código IMDB: {{movie.imdbID}}</p>
+            <h3>Dados da  {{movie.position}}ª Midia</h3>
+            <p>Código IMDB: {{movie.imdbId}}</p>
             <p>Titulo: {{movie.title}}</p>
             <p>Ano: {{movie.year}}</p>
+            <p>Categoria: {{movie.categoria}}</p>
             <button (click)="jogar(movie)">Esse é a sua escolha?</button>
         </div>
     </div>
